@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Kiosco</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_noEmpl">Número de Empleado</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="error_invalid_email">El correo electrónico es inválido</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">Número de empleado o contraseña incorrecta</string>
+    <string name="error_field_required">Este campo es requerido</string>
+    <string name="no_found">Servicio no disponible por el momento.</string>
+    <string name="bloqueo">El número de empleado esta bloqueado, inténtelo más tarde.</string>
+
+    <string name="home">Recibos</string>
+    <string name="ahorro">Ahorro</string>
+    <string name="vacaciones">Vacaciones</string>
+    <string name="prestamo">Prestamos</string>
+    <string name="prenomina">Pre Nómina</string>
+    <string name="comedor">Comedor</string>
+    <string name="identificacion">Identificacion</string>
+    <string name="action_settings">Configuración</string>
+    <string name="closeDrawer">Navigation View</string>
+    <string name="openDrawer">Navigation View Closed</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ult_nomi_header">Recibos de Nóminas</string>
+    <string name="sub_total">Sub Total:</string>
+    <string name="vales">Vales:</string>
+    <string name="neto">Neto:</string>
+</resources>

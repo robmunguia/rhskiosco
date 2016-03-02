@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Configuración</string>
+    <string name="ult_nomi_header">Recibos de Nóminas</string>
+    <string name="sub_total">Sub Total:</string>
+    <string name="vales">Vales:</string>
+    <string name="neto">Neto:</string>
+</resources>
