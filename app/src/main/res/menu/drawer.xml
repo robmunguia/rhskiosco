@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/inbox"
+            android:id="@+id/recibos"
             android:checked="false"
             android:icon="@drawable/ic_money"
             android:title="@string/home" />
 
         <item
-            android:id="@+id/trash"
+            android:id="@+id/prenomina"
             android:checked="false"
             android:icon="@drawable/ic_prenomina"
             android:title="@string/prenomina" />
 
         <item
-            android:id="@+id/starred"
+            android:id="@+id/ahorro"
             android:checked="false"
             android:icon="@drawable/save_money"
             android:title="@string/ahorro" />

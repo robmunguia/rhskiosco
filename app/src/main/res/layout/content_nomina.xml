@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.rh_synergy.kiosco.NominaActivity"
+    tools:showIn="@layout/activity_nomina">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nómina 15"
+        android:id="@+id/lblDia"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:layout_height="1dp"
+        android:id="@+id/divider1"
+        android:layout_below="@+id/lblDia"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlPercepciones"
+        android:layout_below="@+id/lblDia">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Percepciones"
+            android:id="@+id/lblTituloPer"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlTotalPercepcion"
+        android:layout_below="@+id/rlPercepciones"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <View
+            android:layout_width="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:layout_height="1dp"
+            android:id="@+id/dividerSum"
+            android:layout_toRightOf="@+id/txtPerTotal"
+            android:layout_toEndOf="@+id/txtPerTotal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/Total"
+            android:id="@+id/txtPerTotal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/txtotalPerc"
+            android:gravity="right"
+            android:layout_toLeftOf="@+id/txtotalPerc"
+            android:layout_marginRight="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$4,500.00"
+            android:id="@+id/txtotalPerc"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/percepcion"
+            android:layout_marginBottom="10dp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:layout_height="1dp"
+            android:id="@+id/dividerTotal"
+            android:layout_below="@+id/txtotalPerc"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlDeducciones"
+        android:layout_below="@+id/rlTotalPercepcion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Deducciones"
+            android:id="@+id/lblDeduccion"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlTotalDeducciones"
+        android:layout_below="@+id/rlDeducciones"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <View
+            android:layout_width="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:layout_height="1dp"
+            android:id="@+id/dividerSumdeduc"
+            android:layout_toEndOf="@+id/lblDecTotal"
+            android:layout_toRightOf="@+id/lblDecTotal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/Total"
+            android:id="@+id/lblDecTotal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/txtDedTotal"
+            android:gravity="right"
+            android:layout_toLeftOf="@+id/txtDedTotal"
+            android:layout_marginRight="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$3,200.00"
+            android:id="@+id/txtDedTotal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorHeading"
+            android:layout_marginBottom="10dp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:layout_height="1dp"
+            android:id="@+id/divider2"
+            android:layout_below="@+id/txtDedTotal"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlTotalDeducciones"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/rlResumen"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$ 1350.00"
+            android:id="@+id/txtSalida"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/Deposito"
+            android:id="@+id/lblEntrada"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/vales"
+            android:id="@+id/lblalida"
+            android:layout_below="@+id/txtSalida"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$80.00"
+            android:id="@+id/txtEntrada"
+            android:layout_alignTop="@+id/lblalida"
+            android:layout_alignRight="@+id/txtSalida"
+            android:layout_alignEnd="@+id/txtSalida" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@android:color/darker_gray"
+            android:layout_height="1dp"
+            android:id="@+id/view3"
+            android:layout_above="@+id/txtTotal"
+            android:layout_alignRight="@+id/txtEntrada"
+            android:layout_alignEnd="@+id/txtEntrada"
+            android:layout_alignLeft="@+id/txtSalida"
+            android:layout_alignStart="@+id/txtSalida"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/neto"
+            android:textColor="@color/colorSaldo"
+            android:id="@+id/lblTotal"
+            android:layout_below="@+id/lblalida"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$1430.00"
+            android:textColor="@color/colorSaldo"
+            android:id="@+id/txtTotal"
+            android:layout_below="@+id/txtEntrada"
+            android:layout_alignRight="@+id/txtEntrada"
+            android:layout_alignEnd="@+id/txtEntrada" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+</ScrollView>

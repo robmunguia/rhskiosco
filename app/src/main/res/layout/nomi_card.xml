@@ -1,57 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    card_view:cardCornerRadius="4dp"
-    android:layout_margin="5dp">
+    android:layout_height="wrap_content"
+    android:id="@+id/cv"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="10dp" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/container">
 
-        <TextView
-            android:id="@+id/title"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="contact det"
-            android:gravity="center_vertical"
-            android:textColor="@android:color/white"
-            android:textSize="14dp"/>
-
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:gravity="center_vertical"
-            android:textSize="10dp"
-            android:layout_below="@id/title"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:id="@+id/header"
+            android:padding="16dp" >
 
-        <TextView
-            android:id="@+id/txtSurname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Surname"
-            android:gravity="center_vertical"
-            android:textSize="10dp"
-            android:layout_below="@id/txtName"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/lblDia"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/percepcion" />
 
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/lblPeriodo"
+                android:layout_below="@+id/lblDia"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="150dp"
-            android:layout_alignBaseline="@id/txtName"/>
+            android:id="@+id/separador"
+            android:padding="25dp"
+            android:layout_marginLeft="-16dp"
+            android:layout_marginRight="-16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="-20dp" >
+
+            <View
+                android:layout_width="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:layout_height="1dp"
+                android:id="@+id/view"
+                android:layout_marginTop="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="$ 1350.00"
+                android:id="@+id/txtSalida"
+                android:layout_below="@+id/view"
+                android:layout_alignRight="@+id/view"
+                android:layout_alignEnd="@+id/view" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Deposito"
+                android:id="@+id/lblEntrada"
+                android:layout_below="@+id/view"
+                android:layout_alignLeft="@+id/view"
+                android:layout_alignStart="@+id/view" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/vales"
+                android:id="@+id/lblalida"
+                android:layout_below="@+id/lblEntrada"
+                android:layout_alignLeft="@+id/lblEntrada"
+                android:layout_alignStart="@+id/lblEntrada" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="$80.00"
+                android:id="@+id/txtEntrada"
+                android:layout_below="@+id/txtSalida"
+                android:layout_alignRight="@+id/txtSalida"
+                android:layout_alignEnd="@+id/txtSalida" />
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="1dp"
+                android:id="@+id/view3"
+                android:layout_above="@+id/txtTotal"
+                android:layout_alignRight="@+id/txtEntrada"
+                android:layout_alignEnd="@+id/txtEntrada"
+                android:layout_alignLeft="@+id/txtSalida"
+                android:layout_alignStart="@+id/txtSalida" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Total"
+                android:textColor="@color/colorSaldo"
+                android:id="@+id/lblTotal"
+                android:layout_below="@+id/lblalida"
+                android:layout_alignLeft="@+id/lblalida"
+                android:layout_alignStart="@+id/lblalida" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="$1430.00"
+                android:textColor="@color/colorSaldo"
+                android:id="@+id/txtTotal"
+                android:layout_alignTop="@+id/lblTotal"
+                android:layout_alignRight="@+id/txtEntrada"
+                android:layout_alignEnd="@+id/txtEntrada" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
+
 </android.support.v7.widget.CardView>

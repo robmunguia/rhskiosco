@@ -1,5 +1,6 @@
 package com.rh_synergy.kiosco;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -14,9 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,11 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView UsuaImageContent;
     private String Resultado;
     private Usuario user;
-    private Nomina nomi;
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,12 +94,15 @@ public class MainActivity extends AppCompatActivity {
         lblApellidos.setText(user.UsuaApellidos);
 
         lblNombreUser = (TextView) findViewById(R.id.lblUserNombre);
-        lblNombreUser.setText(user.UsuaNombres + " " + user.UsuaApellidos);
+        lblNombreUser.setText(user.UsuaNombres);
+
+        lblNombreUser = (TextView) findViewById(R.id.lblUserApellido);
+        lblNombreUser.setText(user.UsuaApellidos);
 
         //Download User Image
         UsuaImage = (ImageView)vwHeader.findViewById(R.id.profile_image);
         UsuaImageContent = (ImageView)findViewById(R.id.imgUser);
-        String pathToFile = "http://kiosco.rh-synergy.com/Temp/" + user.UsuaNoEmpleado + ".jpg";
+        String pathToFile = "https://kiosco.rh-synergy.com/Temp/" + user.UsuaNoEmpleado + ".jpg";
         DownloadImageWithURLTask downloadTask = new DownloadImageWithURLTask(UsuaImage, UsuaImageContent);
         downloadTask.execute(pathToFile);
 
@@ -124,24 +123,29 @@ public class MainActivity extends AppCompatActivity {
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
-                    case R.id.inbox:
-                        Toast.makeText(getApplicationContext(), "Inbox Selected", Toast.LENGTH_SHORT).show();
+                    case R.id.recibos:
+                        Intent i = new Intent(MainActivity.this, nominas.class);
+                        i.putExtra("NoEmpleado", user.UsuaNoEmpleado);
+                        startActivity(i);
                         return true;
                     // For rest of the options we just show a toast on click
-                    case R.id.starred:
-                        Toast.makeText(getApplicationContext(), "Stared Selected", Toast.LENGTH_SHORT).show();
+                    case R.id.prenomina:
+                        i = new Intent(MainActivity.this, PrenominaActivity.class);
+                        i.putExtra("NoEmpleado", user.UsuaNoEmpleado);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
                         return true;
-                    case R.id.sent_mail:
-                        Toast.makeText(getApplicationContext(), "Send Selected", Toast.LENGTH_SHORT).show();
+                    case R.id.ahorro:
+                        i = new Intent(MainActivity.this, AhorroActivity.class);
+                        i.putExtra("NoEmpleado", user.UsuaNoEmpleado);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
                         return true;
                     case R.id.drafts:
                         Toast.makeText(getApplicationContext(), "Drafts Selected", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.allmail:
                         Toast.makeText(getApplicationContext(), "All Mail Selected", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.trash:
-                        Toast.makeText(getApplicationContext(), "Trash Selected", Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
@@ -170,22 +174,18 @@ public class MainActivity extends AppCompatActivity {
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
 
-        ListView listview = (ListView) findViewById(R.id.listView);
-        listview.setAdapter(new NomiAdapter(this, user.UsuaNominas));
+        rv = (RecyclerView)findViewById(R.id.rv);
 
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(getApplicationContext(), "" + position,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
-        recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
+        rv.setLayoutManager(llm);
+        rv.setHasFixedSize(true);
+
+        initializeAdapter(user.UsuaNominas);
+    }
+
+    private void initializeAdapter(List<Nomina> UsuaNominas){
+        CardNomiAdapter adapter = new CardNomiAdapter(UsuaNominas);
+        rv.setAdapter(adapter);
     }
 
     @Override

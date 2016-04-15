@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cvPrenomina"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/header"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Lunes"
+                android:id="@+id/txtDepoAhorro"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="25/03/2016"
+                android:id="@+id/txtDepoFecha"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/percepcion" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Entrada"
+                android:id="@+id/lblentrada"
+                android:layout_below="@+id/txtDepoAhorro"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="07:55"
+                android:id="@+id/txtEntrada"
+                android:layout_below="@+id/txtDepoAhorro"
+                android:layout_alignLeft="@+id/txtSalida"
+                android:layout_alignStart="@+id/txtSalida" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Salida"
+                android:id="@+id/lblalida"
+                android:layout_below="@+id/lblentrada"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="18:06"
+                android:id="@+id/txtSalida"
+                android:layout_below="@+id/lblentrada"
+                android:layout_toRightOf="@+id/lblentrada"
+                android:layout_toEndOf="@+id/lblentrada"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="1dp"
+                android:id="@+id/view3"
+                android:layout_alignBottom="@+id/lblalida"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/horas"
+                android:id="@+id/lblOrdinarias"
+                android:layout_above="@+id/txtSalida"
+                android:layout_toLeftOf="@+id/txtHoras"
+                android:layout_toStartOf="@+id/txtHoras" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/extras"
+                android:id="@+id/lblExtras"
+                android:layout_below="@+id/lblOrdinarias"
+                android:layout_alignLeft="@+id/lblOrdinarias"
+                android:layout_alignStart="@+id/lblOrdinarias" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="8.8"
+                android:id="@+id/txtHoras"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:layout_alignTop="@+id/lblOrdinarias"
+                android:layout_alignLeft="@+id/txtDepoFecha"
+                android:layout_alignStart="@+id/txtDepoFecha" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0"
+                android:id="@+id/txtHExtras"
+                android:layout_alignTop="@+id/lblExtras"
+                android:layout_alignLeft="@+id/txtHoras"
+                android:layout_alignStart="@+id/txtHoras"
+                android:layout_alignRight="@+id/txtHoras"
+                android:layout_alignEnd="@+id/txtHoras" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="RETARDO"
+                android:id="@+id/txtDescripcion"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignTop="@+id/txtDepoFecha"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="FAlta"
+                android:id="@+id/txtDepoPeriodo"
+                android:layout_above="@+id/txtSalida"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@android:color/darker_gray"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

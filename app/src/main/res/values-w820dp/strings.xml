@@ -2,7 +2,27 @@
 <resources>
     <string name="action_settings">Configuración</string>
     <string name="ult_nomi_header">Recibos de Nóminas</string>
-    <string name="sub_total">Sub Total:</string>
-    <string name="vales">Vales:</string>
-    <string name="neto">Neto:</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="vales">Vales</string>
+    <string name="neto">Neto</string>
+    <string name="Total">Total</string>
+    <string name="Deposito">Deposito</string>
+
+    <!--Prenomina Card-->
+    <string name="entrada">Entrada</string>
+    <string name="salida">Salida</string>
+    <string name="horas">Ordinarias</string>
+    <string name="extras">Extras</string>
+    <string name="totalhoras">Horas</string>
+
+    <!--Ahorro Encabezado-->
+    <string name="ahorInicio">Inicio:</string>
+    <string name="ahorRetiro">Retiro:</string>
+    <string name="ahorRetPer">Descuento:</string>
+    <string name="ahorAhorroTotal">Ahorrado:</string>
+
+    <!--Titulos d Actividades -->
+    <string name="title_activity_nomina">Nómina</string>
+    <string name="title_activity_recibos">Recibos</string>
+    <string name="title_activity_prenomina">Pre Nómina</string>
 </resources>

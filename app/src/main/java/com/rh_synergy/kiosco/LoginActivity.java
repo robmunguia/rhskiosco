@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rh_synergy.kiosco.Global.Shared;
 import com.rh_synergy.kiosco.Models.Usuario;
 
 import org.json.JSONObject;
@@ -48,8 +49,7 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
     private EditText txtPassword;
     private View mProgressView;
     private View mLoginFormView;
-    private String URLkiosco = "http://192.168.7.3:8081/api/Usuarios";
-    //private String URLkiosco = "http://192.168.7.22:8081/api/Usuarios";
+    private String URLkiosco = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +81,6 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
-
 
     /**
      * Validacion de los campos de inicio de sesion
@@ -160,6 +159,7 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
     public String readJSONFeed(final int NoEmpl, final String pass) {
         HttpURLConnection c = null;
         try {
+            URLkiosco = Shared.getURL() + "Usuarios";
             java.net.URL u = new URL(URLkiosco + "?noEmpleado="+NoEmpl+"&pass="+pass);
             c = (HttpURLConnection) u.openConnection();
             c.setRequestMethod("GET");
@@ -226,7 +226,7 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
                     txtPassword.setError(getString(R.string.error_incorrect_password));
                     txtPassword.requestFocus();
                 }
-                else{
+                else {
                     Toast toast;
                     //Obtiene el Objeto Json
                     JSONObject jsonObject = new JSONObject(result);

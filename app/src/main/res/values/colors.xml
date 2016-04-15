@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF2B3A</color>
     <color name="colorHeading">#e94e02</color>
+    <color name="colorSaldo">#4CAF50</color>
+    <color name="PrimaryDarkColor">#1A237E</color>
+    <color name="indicator">#009688</color>
+    <color name="percepcion">#42A5F5</color>
+    <color name="vinculo">#0000EE</color>
 </resources>

@@ -21,6 +21,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity
+            android:name=".NominaActivity"
+            android:label="@string/title_activity_nomina"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".nominas"
+            android:label="@string/title_activity_recibos" />
+        <activity
+            android:name=".PrenominaActivity"
+            android:label="@string/title_activity_prenomina" />
+        <activity android:name=".AhorroActivity" android:label="@string/title_activity_ahorro"></activity>
     </application>
 
 </manifest>
